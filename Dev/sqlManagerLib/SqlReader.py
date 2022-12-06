@@ -9,8 +9,8 @@ class sqlManager:
         self.cnxn = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';DATABASE=' + database + ';ENCRYPT=no;UID=' + username + ';PWD=' + password + ";Trust Server Certificate=yes")
         self.cursor = self.cnxn.cursor()
 
-    def Get5Orders(self):
-        return self.cursor.execute("select * from dbo.orders").fetchmany(5)
+    def Get5Orders(self, order="desc"):
+        return self.cursor.execute("select * from dbo.orders order by orderNumber " + order).fetchmany(5)
 
     def insertOffice(self, myDict: dict):
         columns = ', '.join(myDict.keys())
@@ -31,3 +31,7 @@ class sqlManager:
 
     def commit(self):
         self.cnxn.commit()
+
+if __name__=="__main__":
+    db=sqlManager()
+    print(db.Get5Orders())
