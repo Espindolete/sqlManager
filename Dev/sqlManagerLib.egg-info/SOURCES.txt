@@ -1,0 +1,10 @@
+pyproject.toml
+setup.cfg
+sqlManagerLib/SqlReader.py
+sqlManagerLib/__init__.py
+sqlManagerLib.egg-info/PKG-INFO
+sqlManagerLib.egg-info/SOURCES.txt
+sqlManagerLib.egg-info/dependency_links.txt
+sqlManagerLib.egg-info/requires.txt
+sqlManagerLib.egg-info/top_level.txt
+test/__init__.py
